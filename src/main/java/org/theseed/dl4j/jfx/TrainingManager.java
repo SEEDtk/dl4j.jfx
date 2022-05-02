@@ -68,6 +68,8 @@ public class TrainingManager extends ResizableController implements ITrainReport
     private int numSubmitted;
     /** label column index for training file analysis */
     private int labelIdx;
+    /** ID column name for training file view */
+    private String idColName;
     /** list of label names */
     private List<String> labelNames;
     /** current background task */
@@ -785,13 +787,37 @@ public class TrainingManager extends ResizableController implements ITrainReport
     private void viewTrainingFile(ActionEvent event) {
         try {
             Stage viewStage = new Stage();
+            // Get the training file.
             File trainFile = new File(this.modelDirectory, "training.tbl");
+            // Extract the ID column and the meta and label columns.
+            List<String> nonInputCols = this.computeNonInput();
             TrainingView viewDialog = (TrainingView) BaseController.loadFXML(App.class, "TrainingView", viewStage);
-            viewDialog.init(trainFile, this.labelIdx, this.labelNames);
+            viewDialog.init(trainFile, this.labelIdx, this.labelNames, nonInputCols, this.idColName);
             viewStage.show();
         } catch (IOException e) {
             BaseController.messageBox(Alert.AlertType.ERROR, "Error Loading Training File Viewer", e.toString());
         }
+    }
+
+    /**
+     * This is a utility method that gets the list of non-input columns for the current model and saves the
+     * name of the ID column.
+     *
+     * @return the list of non-input column names
+     *
+     * @throws IOException
+     */
+    private List<String> computeNonInput() throws IOException {
+        ITrainingProcessor processor = ModelType.create(this.modelType);
+        File parmFile = new File(this.modelDirectory, "parms.prm");
+        Parms parms = new Parms(parmFile);
+        if (! processor.setupParameters(parms, this.modelDirectory))
+            throw new IOException("Invalid parameters in " + parmFile + ".");
+        List<String> retVal = new ArrayList<String>(processor.getMetaList());
+        retVal.addAll(processor.getLabelCols());
+        this.idColName = processor.getIdCol();
+        retVal.remove(processor.getIdCol());
+        return retVal;
     }
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -70,6 +71,37 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></GridPane>
               </content>
+            </Tab>
+            <Tab text="Visualization">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+                            <children>
+                              <Label text="Label to Display" />
+                              <ComboBox fx:id="cmbLabel" prefWidth="150.0" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#displayGraph" prefWidth="100.0" text="Show Graph" />
+                              <TilePane fx:id="paneLegend" alignment="CENTER_LEFT" hgap="5.0" maxWidth="1.7976931348623157E308" prefColumns="5" prefHeight="30.0" prefRows="1" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <ScatterChart fx:id="scatterGraph" animated="false" horizontalZeroLineVisible="false" legendVisible="false" verticalZeroLineVisible="false" GridPane.rowIndex="1">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </ScatterChart>
+                     </children>
+                  </GridPane>
+               </content>
             </Tab>
          </tabs>
       </TabPane>

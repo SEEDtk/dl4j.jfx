@@ -17,14 +17,36 @@
 
 .chart-symbol {
     -fx-background-color: #00f;
-    -fx-background-radius: 3px;
-    -fx-padding: 3px;
+    -fx-background-radius: 4px;
+    -fx-padding: 4px;
 }
 
 .default-color1.chart-symbol {
     -fx-background-color: #f00;
-    -fx-background-radius: 3px;
-    -fx-padding: 3px;
+}
+
+.default-color2.chart-symbol {
+    -fx-background-color: #0c0;
+}
+
+.default-color3.chart-symbol {
+    -fx-background-color: #f90;
+}
+
+.default-color4.chart-symbol {
+    -fx-background-color: #880;
+}
+
+.default-color5.chart-symbol {
+    -fx-background-color: #906;
+}
+
+.default-color6.chart-symbol {
+    -fx-background-color: #ccc;
+}
+
+.default-color7.chart-symbol {
+    -fx-background-color: #f66;
 }
 
 .default-color0.chart-bar { -fx-bar-fill: #44f; }
