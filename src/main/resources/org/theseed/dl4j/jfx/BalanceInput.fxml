@@ -21,17 +21,18 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Button fx:id="btnRun" defaultButton="true" mnemonicParsing="false" onAction="#runBalancer" text="Convert" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Button fx:id="btnRun" defaultButton="true" mnemonicParsing="false" onAction="#runBalancer" text="Convert" GridPane.columnIndex="2" GridPane.rowIndex="6" />
       <Label text="Input File" />
       <TextField fx:id="txtInputFile" editable="false" prefWidth="200.0" styleClass="readOnly" stylesheets="@mods.css" GridPane.columnIndex="1" />
       <Button mnemonicParsing="false" onAction="#selectInput" text="..." GridPane.columnIndex="2" />
       <Label text="Format" GridPane.rowIndex="1" />
       <ChoiceBox fx:id="cmbFormat" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label text="Generate IDs" GridPane.rowIndex="5" />
-      <CheckBox fx:id="chkMakeIDs" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label text="Generate IDs" GridPane.rowIndex="6" />
+      <CheckBox fx:id="chkMakeIDs" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
       <Label text="Label" GridPane.rowIndex="2" />
       <ChoiceBox fx:id="cmbLabel" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Label fx:id="labelColumns" text="# Columns" GridPane.rowIndex="3" />
@@ -39,11 +40,13 @@
       <CheckBox fx:id="checkColumns" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <Label text="Scramble" GridPane.rowIndex="4" />
       <ChoiceBox fx:id="cmbScramble" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Label text="Output File" GridPane.rowIndex="6" />
-      <TextField fx:id="txtOutputFile" editable="false" prefWidth="200.0" styleClass="readOnly" stylesheets="@mods.css" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <Button mnemonicParsing="false" onAction="#selectOutput" text="..." GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Label text="Default Value" GridPane.rowIndex="7" />
-      <TextField fx:id="txtDefaultValue" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Label text="Output File" GridPane.rowIndex="7" />
+      <TextField fx:id="txtOutputFile" editable="false" prefWidth="200.0" styleClass="readOnly" stylesheets="@mods.css" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Button mnemonicParsing="false" onAction="#selectOutput" text="..." GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <Label text="Default Value" GridPane.rowIndex="8" />
+      <TextField fx:id="txtDefaultValue" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <Label text="Balance Classes" GridPane.rowIndex="5" />
+      <CheckBox fx:id="checkRows" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
