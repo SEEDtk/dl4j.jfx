@@ -37,6 +37,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.stage.FileChooser;
@@ -122,7 +123,7 @@ public class BalanceInput extends MovableController {
 
     /** check box for enabling row balancing */
     @FXML
-    private CheckBox checkRows;
+    private Spinner<Double> spinBalanced;
 
     public BalanceInput() {
         super(200, 200);
@@ -353,7 +354,7 @@ public class BalanceInput extends MovableController {
         int idCounter = 1;
         try (DistributedOutputStream outStream = DistributedOutputStream.create(trainingFile, this.processor, this.cmbLabel.getValue(), actualHeaders)) {
             // If we are doing class-balancing, turn on the switch.
-            outStream.setBalanced(this.checkRows.isSelected());
+            outStream.setBalanced(this.spinBalanced.getValue());
             // Initially, we stash all the output lines in here.
             List<String[]> lines = new ArrayList<String[]>(1000);
             while (inStream.hasNext()) {

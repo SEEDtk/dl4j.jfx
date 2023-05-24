@@ -46,7 +46,11 @@
       <Label text="Default Value" GridPane.rowIndex="8" />
       <TextField fx:id="txtDefaultValue" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
       <Label text="Balance Classes" GridPane.rowIndex="5" />
-      <CheckBox fx:id="checkRows" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Spinner fx:id="spinBalanced" GridPane.columnIndex="1" GridPane.rowIndex="5" editable="true">
+          <valueFactory>
+              <SpinnerValueFactory.DoubleSpinnerValueFactory min="0.0" max = "5.0" initialValue="0.0" amountToStepBy="0.25" />
+          </valueFactory>
+      </Spinner>
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
