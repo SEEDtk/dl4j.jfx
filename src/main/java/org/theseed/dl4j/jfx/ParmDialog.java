@@ -15,6 +15,7 @@ import org.theseed.dl4j.decision.RandomForest;
 import org.theseed.dl4j.decision.TreeFeatureSelectorFactory;
 import org.theseed.dl4j.jfx.parms.ParmDialogGroup;
 import org.theseed.dl4j.jfx.parms.ParmPaneBuilder;
+import org.theseed.dl4j.train.ClassMetric;
 import org.theseed.dl4j.train.GradientUpdater;
 import org.theseed.dl4j.train.ModelType;
 import org.theseed.dl4j.train.Trainer;
@@ -107,6 +108,7 @@ public class ParmDialog extends MovableController {
      * @param builder	builder for the search pane
      */
     private void deciderSearchPane(ParmPaneBuilder builder) {
+        builder.addChoices("prefer", ClassMetric.values());
         builder.addText("meta");
         builder.addText("col");
         builder.addText("id");
