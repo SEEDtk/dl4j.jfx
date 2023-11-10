@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
+import org.theseed.basic.ICommand;
 import org.theseed.dl4j.train.CrossValidateProcessor;
 import org.theseed.dl4j.train.ITrainReporter;
 import org.theseed.dl4j.train.ITrainingProcessor;
@@ -23,7 +24,6 @@ import org.theseed.jfx.BaseController;
 import org.theseed.jfx.IBackgroundController;
 import org.theseed.jfx.ResizableController;
 import org.theseed.join.JoinDialog;
-import org.theseed.utils.ICommand;
 import org.theseed.utils.Parms;
 
 import javafx.application.Platform;
