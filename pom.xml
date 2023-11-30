@@ -47,7 +47,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.10</version>
+            <version>1.3.12</version>
         </dependency>
         <dependency>
             <groupId>org.theseed</groupId>
@@ -166,9 +166,9 @@
             <version>1.4.0</version>
         </dependency>
         <dependency>
-        	<groupId>org.theseed</groupId>
-        	<artifactId>basic</artifactId>
-        	<version>1.0.0</version>
+            <groupId>org.theseed</groupId>
+            <artifactId>basic</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
     <build>
