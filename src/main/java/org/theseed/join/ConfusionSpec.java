@@ -17,7 +17,7 @@ import org.theseed.jfx.BaseController;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -288,7 +288,7 @@ public class ConfusionSpec extends SaveSpec {
      * @param event		event for the button press
      */
     @FXML
-    private void selectLabels(ActionEvent event) {
+    private void selectLabels(Event event) {
         try {
             File newFile = this.getParent().chooseFile(AnalyzeSpec.LABEL_FILTER, "Label File");
             if (newFile != null) {

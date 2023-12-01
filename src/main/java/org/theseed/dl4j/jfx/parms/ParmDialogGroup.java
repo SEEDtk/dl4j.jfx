@@ -3,6 +3,7 @@
  */
 package org.theseed.dl4j.jfx.parms;
 
+import javafx.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 /**
@@ -143,7 +143,7 @@ public abstract class ParmDialogGroup {
     /**
      * Inner class for handling checkbox events.
      */
-    private class CheckListener implements EventHandler<ActionEvent> {
+    private class CheckListener implements  EventHandler<ActionEvent> {
 
         @Override
         public void handle(ActionEvent event) {

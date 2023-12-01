@@ -18,7 +18,7 @@ import org.theseed.join.ColumnData.Type;
 
 import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -134,7 +134,7 @@ public class HtmlSaveSpec extends SaveSpec {
      * @param event		event for the checkbox toggle
      */
     @FXML
-    public void togglePubmedBox(ActionEvent event) {
+    public void togglePubmedBox(Event event) {
         this.txtPubmed.setDisable(! this.chkPubmed.isSelected());
     }
 

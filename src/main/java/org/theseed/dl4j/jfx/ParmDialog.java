@@ -23,7 +23,7 @@ import org.theseed.io.ParmFile;
 import org.theseed.jfx.BaseController;
 import org.theseed.jfx.MovableController;
 
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.GridPane;
@@ -202,7 +202,7 @@ public class ParmDialog extends MovableController {
      * @param event		event descriptor
      */
     @FXML
-    private void saveAndStay(ActionEvent event) {
+    private void saveAndStay(Event event) {
         if (this.save())
             BaseController.messageBox(Alert.AlertType.INFORMATION, "Parm File Status", "Parameters saved to " + this.parmFile.getAbsolutePath() + ".");
     }

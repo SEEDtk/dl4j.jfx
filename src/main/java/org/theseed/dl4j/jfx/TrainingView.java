@@ -24,7 +24,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
@@ -330,7 +330,7 @@ public class TrainingView extends ResizableController {
      * @param event		event descriptor
      */
     @FXML
-    public void analyzeColumns(ActionEvent event) {
+    public void analyzeColumns(Event event) {
         ColumnAnalysis analyzer = new DistributionAnalysis(this.lineBuffer, this.labelIdx);
         this.processColumns(analyzer);
     }
@@ -341,7 +341,7 @@ public class TrainingView extends ResizableController {
      * @param event		event descriptor
      */
     @FXML
-    public void computeStatistics(ActionEvent event) {
+    public void computeStatistics(Event event) {
         ColumnAnalysis analyzer = new StatisticsAnalysis(this.lineBuffer, this.labelIdx);
         this.processColumns(analyzer);
     }
@@ -352,7 +352,7 @@ public class TrainingView extends ResizableController {
      * @param event		event descriptor
      */
     @FXML
-    public void displaySpread(ActionEvent event) {
+    public void displaySpread(Event event) {
         ColumnAnalysis analyzer = new SpreadColumnAnalysis(this.lineBuffer, this.labelIdx, this.labelNames);
         this.processColumns(analyzer);
     }
@@ -363,7 +363,7 @@ public class TrainingView extends ResizableController {
      * @param event		event descriptor
      */
     @FXML
-    public void clearResults(ActionEvent event) {
+    public void clearResults(Event event) {
         this.paneResults.getChildren().clear();
     }
 

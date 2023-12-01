@@ -15,7 +15,7 @@ import org.theseed.jfx.ResizableController;
 import org.theseed.jfx.Stat;
 import org.theseed.reports.IValidationReport;
 
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -148,7 +148,7 @@ public class ResultDisplay extends ResizableController {
      * @param event		event descriptor
      */
     @FXML
-    private void selectTrainingFile(ActionEvent event) {
+    private void selectTrainingFile(Event event) {
         FileChooser chooser = createFileChooser("Select Training File");
         File newFile = chooser.showOpenDialog(this.getStage());
         if (newFile != null) {
@@ -180,7 +180,7 @@ public class ResultDisplay extends ResizableController {
      * @param event		event descriptor
      */
     @FXML
-    private void displayResults(ActionEvent event) {
+    private void displayResults(Event event) {
         this.showResults();
     }
 
@@ -200,7 +200,7 @@ public class ResultDisplay extends ResizableController {
      * Run the predictions and save the results to a file.
      */
     @FXML
-    private void saveResults(ActionEvent event) {
+    private void saveResults(Event event) {
         FileChooser chooser = this.createFileChooser("Select Output File");
         File outFile = chooser.showSaveDialog(this.getStage());
         if (outFile != null) {

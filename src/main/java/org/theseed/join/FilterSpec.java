@@ -21,7 +21,7 @@ import org.theseed.io.TabbedLineReader;
 import org.theseed.jfx.BaseController;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
@@ -193,7 +193,7 @@ public class FilterSpec implements IJoinSpec {
      * @param	event	event for button press
      */
     @FXML
-    private void selectInput(ActionEvent event) {
+    private void selectInput(Event event) {
         File retVal = this.parent.chooseFile(JoinDialog.FLAT_FILTER, "Filtering File");
         if (retVal != null) {
             try {
@@ -210,7 +210,7 @@ public class FilterSpec implements IJoinSpec {
      * @param event		event for button press
      */
     @FXML
-    private void deleteFile(ActionEvent event) {
+    private void deleteFile(Event event) {
         boolean confirmed = JoinSpec.confirmDelete(this.inFile);
         if (confirmed)
             this.parent.deleteFile(this);

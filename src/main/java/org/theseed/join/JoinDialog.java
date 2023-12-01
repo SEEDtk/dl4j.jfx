@@ -17,7 +17,7 @@ import org.theseed.io.KeyedFileMap;
 import org.theseed.jfx.BaseController;
 import org.theseed.jfx.ResizableController;
 
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -156,7 +156,7 @@ public class JoinDialog extends ResizableController {
      * @param event		button-click event
      */
     @FXML
-    private void addFileSpec(ActionEvent event) {
+    private void addFileSpec(Event event) {
         try {
             // Create the new file specification and add it to the file-spec lists.
             IJoinSpec newFileSpec = cmbJoinType.getSelectionModel().getSelectedItem().getController(this);
@@ -184,7 +184,7 @@ public class JoinDialog extends ResizableController {
      * @param event		button-click event
      */
     @FXML
-    private void joinFiles(ActionEvent event) {
+    private void joinFiles(Event event) {
         try {
             // Get the key column name.
             String keyName = ((FileSpec) this.specList.get(0)).getKeyColumn();

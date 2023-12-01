@@ -30,7 +30,7 @@ import org.theseed.jfx.BaseController;
 import org.theseed.jfx.MovableController;
 
 import dl4j.utils.ConversionStream;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -232,7 +232,7 @@ public class BalanceInput extends MovableController {
      *
      * @param event		event descriptor
      */
-    public void selectInput(ActionEvent event) {
+    public void selectInput(Event event) {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Select Raw Input File");
         chooser.setInitialDirectory(this.modelDirectory);
@@ -254,7 +254,7 @@ public class BalanceInput extends MovableController {
      *
      * @param event		event descriptor
      */
-    public void selectOutput(ActionEvent event) {
+    public void selectOutput(Event event) {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Select Output File");
         chooser.setInitialDirectory(this.outputFile.getParentFile());
@@ -275,7 +275,7 @@ public class BalanceInput extends MovableController {
      *
      * @param event		event descriptor
      */
-    public void runBalancer(ActionEvent event) {
+    public void runBalancer(Event event) {
         // Compute the backup file name.
         File backupFile = new File(this.modelDirectory, this.outputFile.getName() + ".bak");
         // Get the input type.

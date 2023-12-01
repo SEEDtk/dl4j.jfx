@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.theseed.excel.CustomWorkbook;
 import org.theseed.io.KeyedFileMap;
 
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -234,7 +234,7 @@ public class ExcelSaveSpec extends SaveSpec {
      * @param event		event for the checkbox toggle
      */
     @FXML
-    public void togglePubmedBox(ActionEvent event) {
+    public void togglePubmedBox(Event event) {
         this.txtPubmed.setDisable(! this.chkPubmed.isSelected());
     }
 

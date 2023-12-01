@@ -23,7 +23,7 @@ import org.theseed.jfx.MovableController;
 import org.theseed.join.JoinDialog;
 import org.theseed.utils.Parms;
 
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -149,7 +149,7 @@ public class PredictDialog extends MovableController {
     }
 
     @FXML
-    private void selectInput(ActionEvent event) {
+    private void selectInput(Event event) {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Select Input File");
         chooser.setInitialDirectory(this.savedDirectory);
@@ -200,7 +200,7 @@ public class PredictDialog extends MovableController {
     }
 
     @FXML
-    private void selectOutput(ActionEvent event) {
+    private void selectOutput(Event event) {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Select Prediction Output File");
         chooser.setInitialDirectory(this.savedDirectory);
@@ -216,7 +216,7 @@ public class PredictDialog extends MovableController {
     }
 
     @FXML
-    private void runPredictions(ActionEvent event) {
+    private void runPredictions(Event event) {
         try {
             // Run the predictions.
             modelType.predict(modelDir, inputFile, outputFile, metaColumns);

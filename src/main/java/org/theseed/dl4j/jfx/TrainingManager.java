@@ -27,7 +27,7 @@ import org.theseed.join.JoinDialog;
 import org.theseed.utils.Parms;
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
@@ -237,7 +237,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void selectModelDirectory(ActionEvent event) {
+    private void selectModelDirectory(Event event) {
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle("Select a Model Directory");
         // Start at the old model directory, or the current directory if there was none.
@@ -275,7 +275,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void abortCommand(ActionEvent event) {
+    private void abortCommand(Event event) {
         if (this.backgrounder != null) {
             this.stopFlag = true;
         }
@@ -288,7 +288,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void runSearch(ActionEvent event) {
+    private void runSearch(Event event) {
         try {
             if (! this.isValidTraining()) {
                 BaseController.messageBox(Alert.AlertType.ERROR, "Uninitialized Training",
@@ -333,7 +333,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void viewLog(ActionEvent event) {
+    private void viewLog(Event event) {
         try {
             Stage logStage = new Stage();
             LogViewer logViewer = (LogViewer) BaseController.loadFXML(App.class, "LogViewer", logStage);
@@ -351,7 +351,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void showModelResults(ActionEvent event) {
+    private void showModelResults(Event event) {
         try {
             Stage resultStage = new Stage();
             // Get the training processor and set it up for predictions.
@@ -379,7 +379,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void showPredict(ActionEvent event) {
+    private void showPredict(Event event) {
         try {
             Stage predictStage = new Stage();
             PredictDialog predictDialog = (PredictDialog) BaseController.loadFXML(App.class, "PredictDialog", predictStage);
@@ -400,7 +400,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void showJoinDialog(ActionEvent event) {
+    private void showJoinDialog(Event event) {
         try {
             invokeJoinDialog(null);
         } catch (Exception e) {
@@ -428,7 +428,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void runXValidate(ActionEvent event) {
+    private void runXValidate(Event event) {
         ICommand processor = new CrossValidateProcessor(this);
         try {
             // Save the k-fold value.
@@ -761,7 +761,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void convertInput(ActionEvent event) {
+    private void convertInput(Event event) {
         try {
             Stage convertStage = new Stage();
             BalanceInput balanceDialog = (BalanceInput) BaseController.loadFXML(App.class, "BalanceInput", convertStage);
@@ -784,7 +784,7 @@ public class TrainingManager extends ResizableController implements ITrainReport
      * @param event		event descriptor
      */
     @FXML
-    private void viewTrainingFile(ActionEvent event) {
+    private void viewTrainingFile(Event event) {
         try {
             Stage viewStage = new Stage();
             // Get the training file.

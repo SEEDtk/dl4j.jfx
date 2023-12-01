@@ -26,7 +26,7 @@ import org.theseed.io.KeyedFileMap;
 import org.theseed.io.LineReader;
 import org.theseed.jfx.BaseController;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert.AlertType;
@@ -540,7 +540,7 @@ public class AnalyzeSpec implements IJoinSpec {
      * @param event		event for the button press
      */
     @FXML
-    private void selectLabels(ActionEvent event) {
+    private void selectLabels(Event event) {
         try {
             File newFile = this.parent.chooseFile(LABEL_FILTER, "Label File");
             if (newFile != null) {
@@ -560,7 +560,7 @@ public class AnalyzeSpec implements IJoinSpec {
      * @param event		event for button press
      */
     @FXML
-    private void deleteFile(ActionEvent event) {
+    private void deleteFile(Event event) {
         boolean confirmed = JoinSpec.confirmDelete(this.labelFile);
         if (confirmed)
             this.parent.deleteFile(this);

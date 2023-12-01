@@ -10,11 +10,10 @@ import org.theseed.dl4j.train.ModelType;
 import org.theseed.jfx.MovableController;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 
 /**
  * This is the dialog for selecting the metadata columns.  It takes as input a list of column headers and places them in the
@@ -81,7 +80,7 @@ public class MetaDialog extends MovableController {
      * @param event			mouse event descriptor
      */
     @FXML
-    private void clickLeft(MouseEvent event) {
+    private void clickLeft(Event event) {
         this.transferSelected(this.leftList, this.rightList);
     }
 
@@ -91,7 +90,7 @@ public class MetaDialog extends MovableController {
      * @param event			mouse event descriptor
      */
     @FXML
-    private void clickRight(MouseEvent event) {
+    private void clickRight(Event event) {
         this.transferSelected(this.rightList, this.leftList);
     }
 
@@ -120,7 +119,7 @@ public class MetaDialog extends MovableController {
      * @param event		button click event descriptor
      */
     @FXML
-    private void finish(ActionEvent event) {
+    private void finish(Event event) {
         this.close();
     }
 

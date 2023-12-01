@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.theseed.io.KeyedFileMap;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -144,7 +144,7 @@ public class PickSpec implements IJoinSpec {
      * @param event		event from the delete button-press
      */
     @FXML
-    public void deleteFile(ActionEvent event) {
+    public void deleteFile(Event event) {
         parent.deleteFile(this);
     }
 

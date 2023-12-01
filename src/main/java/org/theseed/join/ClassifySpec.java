@@ -19,7 +19,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -289,7 +289,7 @@ public class ClassifySpec implements IJoinSpec {
      * @param event		event from the delete button-press
      */
     @FXML
-    public void deleteFile(ActionEvent event) {
+    public void deleteFile(Event event) {
         parent.deleteFile(this);
     }
 
@@ -299,7 +299,7 @@ public class ClassifySpec implements IJoinSpec {
      * @param event		event from the update button press
      */
     @FXML
-    public void setupTable(ActionEvent event) {
+    public void setupTable(Event event) {
         // The button can only be pressed to activate this event if the size is
         // an integer >= 2.
         int newSize = Integer.valueOf(this.txtNumClasses.getText());

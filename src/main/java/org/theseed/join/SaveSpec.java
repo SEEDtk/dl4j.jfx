@@ -7,7 +7,7 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
@@ -72,7 +72,7 @@ public abstract class SaveSpec implements IJoinSpec {
      * @param event		event for button press
      */
     @FXML
-    public void selectOutput(ActionEvent event) {
+    public void selectOutput(Event event) {
         ExtensionFilter filter = this.getFilter();
         String label = this.getFileLabel();
         File newFile = this.parent.selectOutput(filter, label);
@@ -105,7 +105,7 @@ public abstract class SaveSpec implements IJoinSpec {
      * @param event		event for button press
      */
     @FXML
-    public void deleteFile(ActionEvent event) {
+    public void deleteFile(Event event) {
         boolean confirmed = JoinSpec.confirmDelete(this.getOutFile());
         if (confirmed)
             this.parent.deleteFile(this);
