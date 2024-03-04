@@ -203,7 +203,7 @@
             <zipfileset excludes="META-INF/*.SF" src="${env.HOME}/.m2/repository/de/rototor/pdfbox/graphics2d/0.30/graphics2d-0.30.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${env.HOME}/.m2/repository/org/apache/pdfbox/pdfbox/2.0.22/pdfbox-2.0.22.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${env.HOME}/.m2/repository/org/apache/pdfbox/fontbox/2.0.22/fontbox-2.0.22.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="${env.HOME}/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${env.HOME}/.m2/repository/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${env.HOME}/.m2/repository/com/j2html/j2html/1.4.0/j2html-1.4.0.jar"/>
         </jar>
     </target>
