@@ -6,9 +6,9 @@ package org.theseed.dl4j.jfx;
 import java.util.Collections;
 import java.util.List;
 import org.nd4j.linalg.api.ndarray.INDArray;
-import org.theseed.counters.RatingList;
 import org.theseed.jfx.Prediction;
 import org.theseed.jfx.Stat;
+import org.theseed.stats.RatingList;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
